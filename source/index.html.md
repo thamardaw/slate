@@ -8,7 +8,7 @@ language_tabs:
   - javascript
 
 toc_footers:
-  - <a href='#'>Sign Up for a Thamardaw Key</a>
+  - <a href='thamardaw.com'>Sign Up for Thamardaw</a>
   - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
 
 includes:
