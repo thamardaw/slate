@@ -278,9 +278,9 @@ Kittn expects for the API key to be included in all API requests to the server i
 You must replace <code>token</code> with your personal API key.
 </aside>
 
-# Kittens
+# Transaction
 
-## Get All Kittens
+## Transaction (Buyer)
 
 ```ruby
 require 'kittn'
@@ -346,7 +346,7 @@ available | true | If set to false, the result will include kittens that have al
 Remember — a happy kitten is an authenticated kitten!
 </aside>
 
-## Get a Specific Kitten
+## Transaction (Seller)
 
 ```ruby
 require 'kittn'
