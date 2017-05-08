@@ -117,9 +117,6 @@ password | Type your password
 You must replace <code>token</code> with your personal API key.
 </aside>
 
-# Items
-
-## Get All Items
 
 ```API
 require 'kittn'
@@ -184,7 +181,7 @@ available | true | If set to false, the result will include kittens that have al
 Remember — a happy kitten is an authenticated kitten!
 </aside>
 
-# Item 
+# Items
 
 ##Get All Item
 <aside class="notice">
@@ -194,7 +191,9 @@ It will return all drug catalog items.
 ###Routes : http://tmd-dev.thamardaw.com/api/item?token=x (GET)
 
 ###x=token logging from app
+
 > returns JSON structured like this:
+
 ```json
 [
   {
@@ -217,11 +216,11 @@ It will return all drug catalog items.
     "price": "7000",
     "category": null,
     "FDA_DRC_NO": null
-  },
-  ....
+  }
+  
  ] 
 ```
-##Search Item
+##Search Items
 
 <aside class="notice">
 It will return all searched items.
@@ -229,10 +228,12 @@ It will return all searched items.
 
 ###Routes:http://tmd-dev.thamardaw.com/api/item/search/{str}?token=x (GET)
 ###x =token logging from app
-##str = item name you want to search
+###str = item name you want to search
 
-##eg.http://tmd-dev.thamardaw.com/api/item/search/R?token=x
+###eg.http://tmd-dev.thamardaw.com/api/item/search/R?token=x
+
 >return json structured like this
+
 ```json
 [
   {
@@ -256,64 +257,55 @@ It will return all searched items.
     "category": null,
     "FDA_DRC_NO": null
   },
-  ...
+  
  ] 
 
 ```
+##pagnination for item getall
 
-## Get a Specific Kitten
 
-```ruby
-require 'kittn'
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
+<aside>
+  -It will return limited item(eg.1 to 8-->8 item will return) 
+</aside>
 
-```python
-import kittn
+###Routes:http://tmd-dev.thamardaw.com/api/item/pagnination/{current}/{page}?token=x
+###x=token logging from app
+###current = start position(eg if 8 per page,current will start 0)
+###page = end position(eg if 8 per page,page will start 8)
 
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```API
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-```laravel
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
-```
-
-> The above command returns JSON structured like this:
+###eg http://tmd-dev.thamardaw.com/api/item/pagnination/0/8?token=x
+>return json structure like this
 
 ```json
 {
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
+  "count": 19,
+  "result": [
+    {
+      "id": "1",
+      "drug_code": "RegG60",
+      "brand_name": "Regenerix GOLD: Rapid Recovery",
+      "generic_name": "generic",
+      "strength_concentration": "500 Mg",
+      "base_unit_of_measure": "Bottle",
+      "purchase_order_unit_of_measure": "Box",
+      "country_of_manufacture": "USA",
+      "gross_weight": "50",
+      "net_weight": "30",
+      "weight_unit": "Gram",
+      "size_dimension": "3cm x 3cm x 10cm",
+      "description_en": "description",
+      "created_at": "2016-08-07 09:58:02",
+      "updated_at": "2016-08-07 09:58:25",
+      "image_url": "rg1.jpg",
+      "price": "7000",
+      "category": null,
+      "FDA_DRC_NO": null
+    }
+    
+ }   
 ```
 
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-
-### HTTP Request
-
-`GET http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
 
 # Inventory
 
@@ -357,277 +349,7 @@ You must replace <code>token</code> with your personal API key.
 
 # Transaction
 
-
-
 ## Transaction (Buyer)
-<aside class="notice">
-
--It will store drug transaction detail in backend database.
-
-</aside>
-##Routes :http://tmd-dev.thamardaw.com/api/strTransaction?token=x 
-##(POST)
-##(x= token get from logging in app)
-##(parameters :  drug_code, quantity, payment, discount,  bonus,  unit_price, total_price)
-
->return the json structured like this
-```json
-
-
-```
-
-<aside class="notice">
-	-It will return drug transaction detail made by that user from backend database.
-</aside>
-
-##Routes :http://tmd-dev.thamardaw.com/api/strTransaction?token=x (POST)
-##parameters :user_id
-##x=token get from logging in app
-
->return the json structured like this
-```json
-
-
-```
-
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```API
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-```laravel
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-```
-
-This endpoint retrieves all kittens.
-
-### HTTP Request
-
-`GET http://example.com/api/kittens`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Transaction (Seller)
-<aside>
-   -It will return drug transaction detail of all users from backend database.
-</aside>
-###Routes :http://tmd-dev.thamardaw.com/api/TransactionBySeller?token=x 
-###x= token get from logging in app
-###parameter none
-
->return json structured like this
-```json
-
-
-```
-
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```API
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-```laravel
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
-```
-
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-
-### HTTP Request
-
-`GET http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
-
-#Interaction(Seller)
-
-<aside>
-    -It will return all order/delivery/payment interaction status.
-</aside>
-##Routes :http://tmd-dev.thamardaw.com/api/InteractionBySeller?token=x (get)
-##x = token get from logging in app
-##parameter none
-
->return json structure like this
-
-```json
-
-```
-
-<aside>
-   -update all order/delivery/payment interaction status.
-</aside>
-##Routes :http://tmd-dev.thamardaw.com/api/updateOrderStatus?token=x (POST)
-##x = token get from logging in app
-##parameter none
-
->return json structure like this
-
-```json
-
-```
-
-#pagnination
-
-##for item catalog
-
-<aside>
-	-It will return limited item(eg.1 to 8-->8 item will return) 
-</aside>
-
-###Routes:http://tmd-dev.thamardaw.com/api/item/pagnination/{current}/{page}?token=x
-###x=token logging from app
-###current = start position(eg if 8 per page,current will start 0)
-###page = end position(eg if 8 per page,page will start 8)
-
-###eg http://tmd-dev.thamardaw.com/api/item/pagnination/0/8?token=x
->return json structure like this
-
-```json
-{
-  "count": 19,
-  "result": [
-    {
-      "id": "1",
-      "drug_code": "RegG60",
-      "brand_name": "Regenerix GOLD: Rapid Recovery",
-      "generic_name": "generic",
-      "strength_concentration": "500 Mg",
-      "base_unit_of_measure": "Bottle",
-      "purchase_order_unit_of_measure": "Box",
-      "country_of_manufacture": "USA",
-      "gross_weight": "50",
-      "net_weight": "30",
-      "weight_unit": "Gram",
-      "size_dimension": "3cm x 3cm x 10cm",
-      "description_en": "description",
-      "created_at": "2016-08-07 09:58:02",
-      "updated_at": "2016-08-07 09:58:25",
-      "image_url": "rg1.jpg",
-      "price": "7000",
-      "category": null,
-      "FDA_DRC_NO": null
-    },
-    ...
- }   
-```
-##for interactionBySeller
-
-<aside>
-    -It will return all order/delivery/payment interaction status.
-</aside>
-###Routes:http://tmd-dev.thamardaw.com/api/interactionBySeller/pagination/{current}/{page}?token=x
-###x=token logging from app
-###current = start position(eg if 8 per page,current will start 0)
-###page = end position(eg if 8 per page,page will start 8)
-
-###eg http://tmd-dev.thamardaw.com/api/interactionBySeller/pagination/0/8?token=x
->return json structure like this
-```json
-{
-  "interaction": [
-    {
-      "phone": "999",
-      "address": "Home",
-      "name": "MichaelMaung",
-      "id": "108",
-      "user_id": "127",
-      "tr_doc_no": "dfdf",
-      "order_status": "order status",
-      "delivery_status": null,
-      "payment_status": null,
-      "drug_code": null,
-      "created_at": "2017-05-07 04:52:11",
-      "updated_at": "2017-05-07 04:52:11"
-    },
-    ....
- ]   
-```
-##for transactionbyseller
-
 <aside>
    -It will return drug transaction detail of all users from backend database.
 </aside>
@@ -637,8 +359,10 @@ ID | The ID of the kitten to retrieve
 ###current = start position(eg if 8 per page,current will start 0)
 ###page = end position(eg if 8 per page,page will start 8)
 
-###eg http://tmd-dev.thamardaw.com/api/transactionBySeller/pagination/0/8?token=x
+###eg http://tmd-dev.thamardaw.com/api/transaction/pagination/0/8?token=x
+
 >return json structure like this
+
 ```json
 {
   "transaction": [
@@ -660,12 +384,87 @@ ID | The ID of the kitten to retrieve
       "total_price": null,
       "created_at": "2017-05-07 07:44:39",
       "updated_at": "2017-05-07 07:44:39"
-    },
+    }
 
-    ....
+    
  ]   
 ```
-	
 
 
+## Transaction (Seller)
 
+<aside>
+   -It will return drug transaction detail of all users from backend database.
+</aside>
+
+###Routes:http://tmd-dev.thamardaw.com/api/transactionBySeller/pagination/{current}/{page}?token=x
+###x=token logging from app
+###current = start position(eg if 8 per page,current will start 0)
+###page = end position(eg if 8 per page,page will start 8)
+
+###eg http://tmd-dev.thamardaw.com/api/transactionBySeller/pagination/0/8?token=x
+
+>return json structure like this
+
+```json
+{
+  "transaction": [
+    {
+      "id": "number",
+      "user_id": null,
+      "username": null,
+      "tr_doc_no": "no",
+      "tr_item_no": "1",
+      "drug_code": null,
+      "description_": null,
+      "quantity": null,
+      "base_uom": null,
+      "trans_uom": null,
+      "payment": null,
+      "discount": null,
+      "bonus": null,
+      "unit_price": null,
+      "total_price": null,
+      "created_at": "2017-05-07 07:44:39",
+      "updated_at": "2017-05-07 07:44:39"
+    }
+
+    
+ ]   
+```
+
+#Interaction
+
+##for interactionbyseler
+<aside>
+    -It will return all order/delivery/payment interaction status.
+</aside>
+###Routes:http://tmd-dev.thamardaw.com/api/interactionBySeller/pagination/{current}/{page}?token=x
+###x=token logging from app
+###current = start position(eg if 8 per page,current will start 0)
+###page = end position(eg if 8 per page,page will start 8)
+
+###eg http://tmd-dev.thamardaw.com/api/interactionBySeller/pagination/0/8?token=x
+>return json structure like this
+
+```json
+{
+  "interaction": [
+    {
+      "phone": "999",
+      "address": "Home",
+      "name": "MichaelMaung",
+      "id": "108",
+      "user_id": "127",
+      "tr_doc_no": "dfdf",
+      "order_status": "order status",
+      "delivery_status": null,
+      "payment_status": null,
+      "drug_code": null,
+      "created_at": "2017-05-07 04:52:11",
+      "updated_at": "2017-05-07 04:52:11"
+    }
+    
+  ]   
+ }
+```
