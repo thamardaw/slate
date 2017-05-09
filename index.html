@@ -222,7 +222,6 @@
       </div>
         <ul class="toc-footer">
             <li><a href='thamardaw.com'>Sign Up for Thamardaw</a></li>
-            <li><a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
@@ -268,7 +267,7 @@ of tools to help you easily and quickly build your own API.</p>
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves registered user&rsquo;s information.</p>
+<p>This endpoint will retrieves registered user&rsquo;s information.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -356,7 +355,7 @@ Remember — a user can only register with single email account!
 
 <h1 id="items">Items</h1>
 
-<h2 id="get-all-item">Get All Item</h2>
+<h2 id="get-all-items">Get All Items</h2>
 
 <aside class="notice">
 It will return all drug catalog items.
@@ -410,69 +409,7 @@ It will return all drug catalog items.
 
  </span><span class="p">]</span><span class="w"> 
 </span></code></pre>
-<h2 id="search-items">Search Items</h2>
-
-<aside class="notice">
-It will return all searched items.
-</aside>
-
-<h3 id="http-request">HTTP Request</h3>
-
-<p><code class="prettyprint">GET http://tmd-dev.thamardaw.com/api/item/search/{str}?token=x</code></p>
-
-<p><code class="prettyprint">eg. GET http://tmd-dev.thamardaw.com/api/item/search/R?token=x</code></p>
-
-<h3 id="query-parameters">Query Parameters</h3>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>x</td>
-<td>-</td>
-<td>Token</td>
-</tr>
-<tr>
-<td>str</td>
-<td>-</td>
-<td>item name you want to search</td>
-</tr>
-</tbody></table>
-
-<blockquote>
-<p>return json structured like this</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"drug_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RegG60"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"brand_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Redfdfdfdf"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"generic_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"genric"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"strength_concentration"</span><span class="p">:</span><span class="w"> </span><span class="s2">"500 Mg"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"base_unit_of_measure"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bottle"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"purchase_order_unit_of_measure"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Box"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"country_of_manufacture"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"gross_weight"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"net_weight"</span><span class="p">:</span><span class="w"> </span><span class="s2">"30"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"weight_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gram"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"size_dimension"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3cm x 3cm x 10cm"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"description_en"</span><span class="p">:</span><span class="w"> </span><span class="s2">"description"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-08-07 09:58:02"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-08-07 09:58:25"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">".jpg"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7000"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"FDA_DRC_NO"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-
- </span><span class="p">]</span><span class="w"> 
-
-</span></code></pre>
-<h2 id="pagination-for-item-detail">pagination for item detail</h2>
+<h2 id="get-all-items-pagination">Get All Items (Pagination)</h2>
 
 <aside>
   -It will return limited item(eg.1 to 8&ndash;>8 item will return) 
@@ -540,63 +477,7 @@ It will return all searched items.
 
  </span><span class="p">}</span><span class="w">   
 </span></code></pre>
-<h1 id="inventory">Inventory</h1>
-
-<h2 id="get-inventory-information">Get Inventory Information</h2>
-
-<aside class="notice">
-It will return all drug catalog items.
-</aside>
-
-<h3 id="http-request">HTTP Request</h3>
-
-<p><code class="prettyprint">GET http://tmd-dev.thamardaw.com/api/item?token=x</code></p>
-
-<h3 id="query-parameters">Query Parameters</h3>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>x</td>
-<td>-</td>
-<td>Token</td>
-</tr>
-</tbody></table>
-
-<blockquote>
-<p>returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"drug_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RegG60"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"brand_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"brandname"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"generic_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"genreir name"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"strength_concentration"</span><span class="p">:</span><span class="w"> </span><span class="s2">"500 Mg"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"base_unit_of_measure"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bottle"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"purchase_order_unit_of_measure"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Box"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"country_of_manufacture"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"gross_weight"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"net_weight"</span><span class="p">:</span><span class="w"> </span><span class="s2">"30"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"weight_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gram"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"size_dimension"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3cm x 3cm x 10cm"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"description_en"</span><span class="p">:</span><span class="w"> </span><span class="s2">"descriptoin"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-08-07 09:58:02"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-08-07 09:58:25"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jpg"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7000"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"FDA_DRC_NO"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-
- </span><span class="p">]</span><span class="w"> 
-</span></code></pre>
-<h2 id="check-inventory">Check Inventory</h2>
+<h2 id="search-items">Search Items</h2>
 
 <aside class="notice">
 It will return all searched items.
@@ -658,9 +539,251 @@ It will return all searched items.
  </span><span class="p">]</span><span class="w"> 
 
 </span></code></pre>
+<h1 id="inventory">Inventory</h1>
+
+<h2 id="get-item-inventory">Get Item Inventory</h2>
+
+<aside class="notice">
+It will return inventory information of selected item.
+</aside>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST http://tmd-dev.thamardaw.com/api/inventory?token=x</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>x</td>
+<td>-</td>
+<td>Token</td>
+</tr>
+<tr>
+<td>drug_code</td>
+<td>-</td>
+<td>item drug code</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"inventory"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"drug_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RegG60"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"base_uom"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"unit_price"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"average_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7000.00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"lead_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3 Day"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-09-11 10:33:25"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h2 id="check-inventory">Check Inventory</h2>
+
+<aside class="notice">
+It will return all searched items.
+</aside>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST http://tmd-dev.thamardaw.com/api/inventoryCheck?token=x</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>x</td>
+<td>-</td>
+<td>Token</td>
+</tr>
+<tr>
+<td>drug_code</td>
+<td>-</td>
+<td>item drug code</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>-</td>
+<td>order quantity</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>return json structured like this</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"valid"</span><span class="p">,</span><span class="s2">"responseMessage"</span><span class="p">:</span><span class="s2">"succeed"</span><span class="p">}</span><span class="w"> </span><span class="err">or</span><span class="w">
+</span><span class="p">{</span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"invalid"</span><span class="p">,</span><span class="s2">"responseMessage"</span><span class="p">:</span><span class="s2">"We do not have enough stock"</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <h1 id="transaction">Transaction</h1>
 
+<h2 id="send-order-transaction-buyer">Send Order Transaction (Buyer)</h2>
+
+<aside class="notice">
+It will send order information to server and will generate order number.
+</aside>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST tmd-dev.thamardaw.com/api/strTransaction?token=x</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>x</td>
+<td>-</td>
+<td>Token</td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>-</td>
+<td>user ID generated by system</td>
+</tr>
+<tr>
+<td>username</td>
+<td>-</td>
+<td>username</td>
+</tr>
+<tr>
+<td>drug_code</td>
+<td>-</td>
+<td>item drug code</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>-</td>
+<td>order quantity</td>
+</tr>
+<tr>
+<td>payment</td>
+<td>-</td>
+<td>order payment</td>
+</tr>
+<tr>
+<td>discount</td>
+<td>-</td>
+<td>discount</td>
+</tr>
+<tr>
+<td>bonus</td>
+<td>-</td>
+<td>item bonus</td>
+</tr>
+<tr>
+<td>unit_price</td>
+<td>-</td>
+<td>unit price</td>
+</tr>
+<tr>
+<td>total_price</td>
+<td>-</td>
+<td>total price</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>return json structured like this</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"order_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORD000001"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <h2 id="transaction-buyer">Transaction (Buyer)</h2>
+
+<aside>
+   -It will return drug transaction detail of all users from backend database.
+</aside>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST http://tmd-dev.thamardaw.com/api/transaction/pagination/{current}/{page}?token=x</code></p>
+
+<p><code class="prettyprint">eg. GET http://tmd-dev.thamardaw.com/api/transaction/pagination/0/8?token=x</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>x</td>
+<td>-</td>
+<td>Token</td>
+</tr>
+<tr>
+<td>current</td>
+<td>-</td>
+<td>start position(eg if 8 per page,current will start 0)</td>
+</tr>
+<tr>
+<td>page</td>
+<td>-</td>
+<td>end position(eg if 8 per page,page will start 8)</td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>-</td>
+<td>user ID</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>return json structure like this</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"transaction"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tr_doc_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tr_item_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"drug_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description_"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"base_uom"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"trans_uom"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"payment"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"discount"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"bonus"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"unit_price"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"total_price"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-07 07:44:39"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-07 07:44:39"</span><span class="w">
+    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="err">....</span><span class="p">},</span><span class="w">
+
+
+ </span><span class="p">]</span><span class="w">   
+</span></code></pre>
+<h2 id="transaction-seller">Transaction (Seller)</h2>
 
 <aside>
    -It will return drug transaction detail of all users from backend database.
@@ -670,7 +793,7 @@ It will return all searched items.
 
 <p><code class="prettyprint">GET http://tmd-dev.thamardaw.com/api/transactionBySeller/pagination/{current}/{page}?token=x</code></p>
 
-<p><code class="prettyprint">eg. GET http://tmd-dev.thamardaw.com/api/transaction/pagination/0/8?token=x</code></p>
+<p><code class="prettyprint">eg. GET http://tmd-dev.thamardaw.com/api/transactionBySeller/pagination/0/8?token=x</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -721,72 +844,50 @@ It will return all searched items.
       </span><span class="s2">"total_price"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-07 07:44:39"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-07 07:44:39"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-
-
- </span><span class="p">]</span><span class="w">   
-</span></code></pre>
-<h2 id="transaction-seller">Transaction (Seller)</h2>
-
-<aside>
-   -It will return drug transaction detail of all users from backend database.
-</aside>
-
-<h3 id="routes-http-tmd-dev-thamardaw-com-api-transactionbyseller-pagination-current-page-token-x">Routes:http://tmd-dev.thamardaw.com/api/transactionBySeller/pagination/{current}/{page}?token=x</h3>
-
-<h3 id="x-token-logging-from-app">x=token logging from app</h3>
-
-<h3 id="current-start-position-eg-if-8-per-page-current-will-start-0">current = start position(eg if 8 per page,current will start 0)</h3>
-
-<h3 id="page-end-position-eg-if-8-per-page-page-will-start-8">page = end position(eg if 8 per page,page will start 8)</h3>
-
-<h3 id="eg-http-tmd-dev-thamardaw-com-api-transactionbyseller-pagination-0-8-token-x">eg http://tmd-dev.thamardaw.com/api/transactionBySeller/pagination/0/8?token=x</h3>
-
-<blockquote>
-<p>return json structure like this</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"transaction"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"tr_doc_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"tr_item_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"drug_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"description_"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"base_uom"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"trans_uom"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"payment"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"discount"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"bonus"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"unit_price"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"total_price"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-07 07:44:39"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-07 07:44:39"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="err">....</span><span class="p">},</span><span class="w">
 
 
  </span><span class="p">]</span><span class="w">   
 </span></code></pre>
 <h1 id="interaction">Interaction</h1>
 
-<h2 id="for-interactionbyseler">for interactionbyseler</h2>
+<h2 id="interaction-buyer">Interaction (Buyer)</h2>
 
 <aside>
-    -It will return all order/delivery/payment interaction status.
+    -It will return all order/delivery/payment interaction status of orders.
 </aside>
 
-<h3 id="routes-http-tmd-dev-thamardaw-com-api-interactionbyseller-pagination-current-page-token-x">Routes:http://tmd-dev.thamardaw.com/api/interactionBySeller/pagination/{current}/{page}?token=x</h3>
+<h3 id="http-request">HTTP Request</h3>
 
-<h3 id="x-token-logging-from-app">x=token logging from app</h3>
+<p><code class="prettyprint">GET http://tmd-dev.thamardaw.com/api/interaction/{current}/{page}?token=x</code></p>
 
-<h3 id="current-start-position-eg-if-8-per-page-current-will-start-0">current = start position(eg if 8 per page,current will start 0)</h3>
+<p><code class="prettyprint">eg. GET http://tmd-dev.thamardaw.com/api/interaction/0/8?token=x</code></p>
 
-<h3 id="page-end-position-eg-if-8-per-page-page-will-start-8">page = end position(eg if 8 per page,page will start 8)</h3>
+<h3 id="query-parameters">Query Parameters</h3>
 
-<h3 id="eg-http-tmd-dev-thamardaw-com-api-interactionbyseller-pagination-0-8-token-x">eg http://tmd-dev.thamardaw.com/api/interactionBySeller/pagination/0/8?token=x</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>x</td>
+<td>-</td>
+<td>Token</td>
+</tr>
+<tr>
+<td>current</td>
+<td>-</td>
+<td>start position(eg if 8 per page,current will start 0)</td>
+</tr>
+<tr>
+<td>page</td>
+<td>-</td>
+<td>end position(eg if 8 per page,page will start 8)</td>
+</tr>
+</tbody></table>
 
 <blockquote>
 <p>return json structure like this</p>
@@ -794,19 +895,80 @@ It will return all searched items.
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"interaction"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"999"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Home"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MichaelMaung"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09 123456"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12/34 Botahtaung Township, Yangon"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Username"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"108"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"127"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"tr_doc_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dfdf"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"order_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"order status"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tr_doc_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORD000001"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"order_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order Processed"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"delivery_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="s2">"payment_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="s2">"drug_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-07 04:52:11"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-07 04:52:11"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="err">....</span><span class="p">},</span><span class="w">
+
+  </span><span class="p">]</span><span class="w">   
+ </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h2 id="interaction-seller">Interaction (Seller)</h2>
+
+<aside>
+    -It will return all order/delivery/payment interaction status.
+</aside>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://tmd-dev.thamardaw.com/api/interactionBySeller/pagination/{current}/{page}?token=x</code></p>
+
+<p><code class="prettyprint">eg. GET http://tmd-dev.thamardaw.com/api/interactionBySeller/pagination/0/8?token=x</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>x</td>
+<td>-</td>
+<td>Token</td>
+</tr>
+<tr>
+<td>current</td>
+<td>-</td>
+<td>start position(eg if 8 per page,current will start 0)</td>
+</tr>
+<tr>
+<td>page</td>
+<td>-</td>
+<td>end position(eg if 8 per page,page will start 8)</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>return json structure like this</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"interaction"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"09 123456"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12/34 Botahtaung Township, Yangon"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Username"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"108"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tr_doc_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORD000001"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"order_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order Processed"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"delivery_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"payment_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"drug_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-07 04:52:11"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-07 04:52:11"</span><span class="w">
+    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="err">....</span><span class="p">},</span><span class="w">
 
   </span><span class="p">]</span><span class="w">   
  </span><span class="p">}</span><span class="w">
